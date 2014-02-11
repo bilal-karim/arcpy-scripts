@@ -1,0 +1,22 @@
+# Name; Course: Bilal Karim; GEOG 567
+# Objective: Combine data from two different fields into a new column
+
+# Example
+# Create a dictionary with all the province and territory names in full
+provTerr = {
+  "AB":"Alberta",
+  "BC":"British Columbia",
+  "MB":"Manitoba",
+  "NB":"New Brunswick",
+  "NF":"New Foundland",
+  "NU":"Nunavut",
+  "NS":"Nova Scotia",
+  "NT":"Northwest Territories",
+  "ON":"Ontario",
+  "QC":"Quebec",
+  "YT":"Yukon",
+  "SK":"Saskatchewan",
+  "PE":"Prince Edward Island",
+}
+__esri_field_calculator_splitter__
+!NAME! + ", " + provTerr[!PROV!]
