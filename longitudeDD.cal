@@ -1,0 +1,37 @@
+# Objective: To convert longitude DMS values to DD using indexing
+
+def longitudeDD(x): # Define function
+    if x[0] == "W": # If West..
+        value = -1   # ..then value is negative
+        
+        if len(x) == 11: # If string has 11 characters, then use following to index
+            D = int(x[1:4]) # Determine Degrees using indexing
+            M = int(x[4:6]) # Determine Minutes using indexing
+            S = float(x[6:])# Determine Seconds using indexing
+            DD = value * (D + float(M)/60 + float(S)/3600) # Calculate DD
+            
+        else: # If string isn't 11 characters, then use following to index
+            D = int(x[1:3]) # Determine Degrees using indexing
+            M = int(x[3:5]) # Determine Minutes using indexing
+            S = float(x[5:])# Determine Seconds using indexing
+            DD = value * (D + float(M)/60 + float(S)/3600) # Calculate DD
+            
+    else: # If not West..
+        value = 1 #..then it's East and value is positive
+        
+        if len(x) == 11: # If string has 11 characters, then use following to index
+            D = int(x[1:4]) # Determine Degrees using indexing
+            M = int(x[4:6]) # Determine Minutes using indexing
+            S = float(x[6:])# Determine Seconds using indexing
+            DD = value * (D + float(M)/60 + float(S)/3600) # Calculate DD
+            
+        else: # If string isn't 11 characters, then use following to index
+            D = int(x[1:3]) # Determine Degrees using indexing
+            M = int(x[3:5]) # Determine Minutes using indexing
+            S = float(x[5:])# Determine Seconds using indexing
+            DD = value * (D + float(M)/60 + float(S)/3600) # Calculate DD
+            
+    return DD # Return the DD value
+
+__esri_field_calculator_splitter__
+longitudeDD(!Longitude!)
